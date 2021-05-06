@@ -1,0 +1,24 @@
+<?xml version="1.0" ?><tool id="GISL_Final_b_SC1_tool" name="GISL_Final_b_SC1" version="0.1.0">
+    <requirements>
+    	<container type="docker">docker.synapse.org/syn2813581/6185634/gisl_final_tool</container>
+    </requirements>
+    <command interpreter="Rscript">
+GISL_Final_b_1.R ${input_vcf} ${input_battenberg}
+	</command>
+    
+    <inputs>
+		<param format="vcf" help="" label="VCF file" name="input_vcf" type="data"/>
+		<param format="tabular" help="" label="Battenberg file" name="input_battenberg" type="data"/>
+	</inputs>
+
+	<outputs>
+		<data format="txt" from_work_dir="GISL_subchallenge1A.txt" label="Cellularity (Sub Challenge 1A)" name="1A"/>
+		<data format="txt" from_work_dir="GISL_subchallenge1B.txt" label="Number of Subclones (Sub Challenge 1B)" name="1B"/>
+		<data format="txt" from_work_dir="GISL_subchallenge1C.txt" label="Subclone Proportions (Sub Challenge 1C)" name="1C"/>
+	</outputs>
+
+    
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>

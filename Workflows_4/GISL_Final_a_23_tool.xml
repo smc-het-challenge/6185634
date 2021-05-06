@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><tool id="GISL_Final_a_SC23_tool" name="GISL_Final_a_SC23" version="0.1.0">
+    <requirements>
+    	<container type="docker">docker.synapse.org/syn2813581/6185634/gisl_final_tool</container>
+    </requirements>
+    <command interpreter="Rscript">
+GISL_Final_a_23.R ${input_vcf} ${input_battenberg} ${input_cellularity}
+	</command>
+    
+    <inputs>
+		<param format="vcf" help="" label="VCF file" name="input_vcf" type="data"/>
+		<param format="tabular" help="" label="Battenberg CNV" name="input_battenberg" type="data"/>
+		<param format="tabular" help="" label="Battenberg cellularity" name="input_cellularity" type="data"/>
+	</inputs>
+
+	<outputs>
+		<data format="txt" from_work_dir="GISL_subchallenge2A.txt" label="Mutation Assignments (Sub Challenge 2A)" name="2A"/>
+		<data format="txt" from_work_dir="GISL_subchallenge2B.txt" label="Co-Clustering Matrix (Sub Challenge 2B)" name="2B"/>
+		<data format="txt" from_work_dir="GISL_subchallenge3A.txt" label="Phylogeny Assignments (Sub Challenge 3A)" name="3A"/>
+		<data format="txt" from_work_dir="GISL_subchallenge3B.txt" label="Ancestor-Descendent Matrix (Sub Challenge 3B)" name="3B"/>
+	</outputs>
+
+    
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>
